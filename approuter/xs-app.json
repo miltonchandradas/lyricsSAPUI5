@@ -5,6 +5,11 @@
     "logoutEndpoint": "/do/logout"
   },
   "routes": [
+      {
+      "source": "^/api.lyrics.ovh/(.*)$",
+      "authenticationType": "none",
+      "destination": "lyrics_api"
+    },
     {
       "source": "^/uimodule/(.*)$",
       "target": "$1",

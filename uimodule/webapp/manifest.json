@@ -51,6 +51,9 @@
         "settings": {
           "bundleName": "com.sap.lyrics.i18n.i18n"
         }
+      },
+      "": {
+          "type": "sap.ui.model.json.JSONModel"
       }
     },
     "resources": {

@@ -1,12 +1,62 @@
  <mvc:View controllerName="com.sap.lyrics.controller.App"
   displayBlock="true"
   xmlns="sap.m"
+  xmlns:f="sap.f"
   xmlns:mvc="sap.ui.core.mvc">
   <App id="idAppControl" >
-    <pages>
-      <Page title="{i18n>title}">
-        <content></content>
+      <Page busy="{viewModel>/busy}">
+        <customHeader>
+            <f:ShellBar title="{i18n>title}" homeIcon="./img/guitar.png"></f:ShellBar>
+        </customHeader>
+        <HeaderContainer class="sapUiTinyMarginTop headerContainer" height="200px">
+            <VBox class="sapUiLargeMargin">
+                <Label id="labelSearch" text="Lyrics Search" class="labelSearch"></Label>
+                <HBox class="hboxSearch">
+                <Input id="inputSearch" placeholder="{i18n>searchPlaceHolder}" class="inputSearch"/>
+                <Button id="buttonSearch" text="Search" type="Emphasized" press=".onSearch" class="sapUiSmallMarginBegin"></Button>
+            </HBox>
+            </VBox>
+            
+            
+        </HeaderContainer>
+        <content>
+
+        <Table id="tableSearchResults" class="sapUiLargeMarginTop tableResults" items="{path: '/data'}">
+            <headerToolbar>
+                <OverflowToolbar >
+                    <content>
+								<Title text="Lyrics Search Results" level="H2"/>
+							</content>
+                    <ToolbarSpacer/>
+                    <Button id="buttonPrev" text="Previous" press=".onPrev" visible="{viewModel>/showPrev}"></Button>
+                    <Button id="buttonNext" text="Next" press=".onNext" visible="{viewModel>/showNext}"></Button>
+                    <ToolbarSpacer/>
+                </OverflowToolbar>
+            </headerToolbar>
+            <columns>
+                <Column >
+                    <Text text="Artist"></Text>
+                </Column>
+                <Column >
+                    <Text text="Song"></Text>
+                </Column>
+                <Column >
+                    <Text text="Action"></Text>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem >
+                    <cells>
+                        <ObjectIdentifier title="{artist/name}"></ObjectIdentifier>
+                        <Text text="{title}"></Text>
+                        <Button  text="Get Lyrics" press=".onGetLyrics" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+
+        </Table>
+        </content>
+        
       </Page>
-    </pages>
   </App>
 </mvc:View>

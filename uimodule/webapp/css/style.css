@@ -1,1 +1,62 @@
 /* Enter your custom styles here */
+
+@media(min-width: 768px) {
+
+    .hboxSearch {
+        margin-left: 150px;
+    }
+
+    .labelSearch {
+        margin-left: 150px;
+    }
+
+    .inputSearch {
+        width: 400px !important;
+    }
+
+    .listResults {
+        margin-left: 150px !important;
+    }
+
+    .tableResults {
+        margin-left: 150px !important;
+    }
+}
+
+.headerContainer {
+    background-image: url(../img/guitarBackground.png);
+    color: #fff;
+    position: relative;
+}
+
+.headerContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.headerContainer * {
+    z-index: 1;
+}
+
+.labelSearch {
+    font-size: x-large !important;
+    color: #fff;
+}
+
+.hboxResults {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+

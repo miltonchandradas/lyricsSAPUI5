@@ -27,7 +27,11 @@ server:
         debug: true
         port: 1091
         xsappJson: approuter/xs-app.json
-        destinations: []
+        destinations:
+          - name: lyrics_api
+            url: "https://api.lyrics.ovh"
+          - name: deezer_api
+            url: "http://api.deezer.com"
 builder:
   customTasks:
     -  name: "ui5-task-zipper"
